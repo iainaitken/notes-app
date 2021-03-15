@@ -25,7 +25,14 @@
 <h4>User Story 1 & 2</h4>
 <img width="648" alt="Screenshot 2021-03-15 at 15 47 03" src="https://user-images.githubusercontent.com/21693444/111181355-ccfa8400-85a5-11eb-8017-8bab875289fb.png" align='center'>
 
-```
+<h4> User Story....</h4>
+
+<h2 align='center'>Screenshots<h2>
+<h2 align='center'>Setup</h2>
+<h2 align='center'>Contributors</h2>
+  
+  
+  ```
 alias u="User"
 alias i="Interface/browser"
 alias nb="Notebook"
@@ -45,9 +52,4 @@ nb-->i:"return 20char descriptions"
 i->i:"update html file with descriptions"
 i-->u:"render index.html"
 ```
-
-
-<h2 align='center'>Screenshots<h2>
-<h2 align='center'>Setup</h2>
-<h2 align='center'>Contributors</h2>
 
