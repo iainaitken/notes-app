@@ -14,11 +14,7 @@ class Note {
     } else {
       l = 19;
     }
-    let chars = ""
-    let i = 0
-    for(i = 0; i < l; i++){
-      chars += this._text[i];
-    }
+    let chars = this._text.slice(0, l)
     return chars;
   };
 }
