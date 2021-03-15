@@ -1,0 +1,20 @@
+```
+alias u="User"
+alias i="Interface/browser"
+alias nb="Notebook"
+alias n="Note"
+
+u->i:"Navigate to page"
+i->nb:"create new instance of notebook"
+nb-->i:"return new instance of notebook"
+i-->u:"Render index.html"
+u->i:"enter note details + click submit"
+i->n:"create new note instance"
+n-->i:"return new note instance"
+i->nb:"store new note in notebook"
+nb->nb:"add note to array/hash"
+nb->nb:"function to generate 20char descriptions"
+nb-->i:"return 20char descriptions"
+i->i:"update html file with descriptions"
+i-->u:"render index.html"
+```
