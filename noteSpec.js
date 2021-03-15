@@ -19,10 +19,10 @@ if (note.get20Chars() === "random string") {
 }
 
 
-let note = new Note("this string is much longer than 20 characters, I hope")
+let newNote = new Note("this string is much longer than 20 characters, I hope")
 
-if (note.get20Chars() === "this string is much ") {
+if (newNote.get20Chars() === "this string is much ") {
     console.log("yay")
 }  else {
-    console.log(note.get20Chars())
+    console.log(newNote.get20Chars())
 }
