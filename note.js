@@ -1,34 +1,23 @@
 class Note {
   constructor(text){
     this._text = text;
+    this.DISPLAY_CHARS = 20
   };
 
   getText(){
     return this._text;
   };
 
-  get20chars(){
+
+  get20Chars(){
     let l
-    if (this._text.length < 19) {
-      l = this._text.length;
+    if (this._text.length > this.DISPLAY_CHARS) {
+      l = this.DISPLAY_CHARS;
+      return this._text.slice(0, l)
     } else {
-      l = 19;
+      return this._text;
     }
-    let chars = this._text.slice(0, l)
-    return chars;
   };
 }
 
-class Notebook {
-  constructor(){
-    this._notes = []
-  }
 
-  addNote(note){
-    this._notes.push(note);
-  };
-
-  getNotes(){
-    return this._notes;
-  }
-}
