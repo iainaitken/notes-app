@@ -19,12 +19,13 @@ function appendNoteToPage(note) {
   link.href = '#';
   link.id = description;
 
-  // link.onclick = displayNote();
-  // link.addEventListener("click", displayNote(note));
-  
   list.appendChild(listItem);
   listItem.appendChild(link);
   
+  link.addEventListener("click", function(event) {
+    displayNote(note);
+    event.preventDefault();
+  })
 }
 
 function displayNote(note) {
@@ -37,7 +38,7 @@ function displayNote(note) {
   noteBody.textContent = text;
 }
 
-function hideNote(note) {
+function hideNote() {
   let noteList = document.getElementById("noteList")
   let noteDisplay = document.getElementById("noteDisplay");
   let noteBody = document.getElementById("body");
