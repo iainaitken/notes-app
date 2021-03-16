@@ -43,7 +43,7 @@ So I can record notes with fun little pictures
 
 ## Diagrams
 
-![Sequence diagram for creating a note.](/images/diagrams/create_note_seq_diagram "Sequence diagram.")
+![Sequence diagram for creating a note.](/images/diagrams/create_note_seq_diagram.png "Sequence diagram.")
 
 #### diagrams.codes code for this diagram:
 
