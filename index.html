@@ -1,22 +1,37 @@
 <html>
+  <head>
+      <meta charset="UTF-8">
 
-<head>
-    <meta charset="UTF-8">
-    <script src="javascript/src/note.js"> </script>
-    <script src="javascript/src/notebook.js"> </script>
-    <title>notes</title>
-</head>
-<body>
-  <div id="add_note">
-    <form id="note_form">
-      <label for "note_text">Note text:</label>
-      <input type="text" name="note_text" id="note_text" placeholder="Enter your note text here..."/>
-      <button type="button" onclick="getInputValue()">Add Note</button>
-    </form>
-  </div>
-<div id="note_list"></div>
-<div id="note"></div>
+      <link rel="stylesheet" href="styles/styles.css">
 
-<script src="javascript/src/interface.js"> </script>
+      <script src="javascript/src/note.js"> </script>
+      <script src="javascript/src/notebook.js"> </script>
 
-</body>
+      <title>| Notes App |</title>
+  </head>
+
+  <body>
+    <div id="noteList">
+      <div id="add_note">
+        <form id="form">
+          <label for="note_text">Note text:</label>
+          <input type="text" name="note_text" id="note_text" placeholder="Type here..."/>
+          <button type="button" onclick="submitNote()">Add Note</button>
+        </form>
+      </div>
+      <div>
+        <ul id="list">
+
+        </ul>
+      </div>
+    </div>
+    <div id="noteDisplay">
+      <p id="body"></p>
+      <br>
+      <button id="return" onclick="hideNote()">Back to Notes</button>
+    </div>
+
+    <script src="javascript/src/interface.js"> </script>
+  </body>
+
+</html>

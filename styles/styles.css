@@ -1,0 +1,9 @@
+body {
+  background-color: pink;
+}
+#noteDisplay {
+  display: none;
+}
+#noteList {
+  display: block;
+}

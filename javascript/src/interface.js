@@ -1,37 +1,47 @@
-let notebook = new Notebook()
-
-// let ready = (callback) => {
-//   if (document.readyState != "loading") callback();
-//   else document.addEventListener("DOMContentLoaded", callback);
-// }
+function submitNote(){
+  let text = document.getElementById('note_text').value;
+  let note = createNote(text);
+  appendNoteToPage(note);
+}
 
 function createNote(text) {
   let note = new Note(text);
-  notebook.addNote(note);
+  return note;
 }
 
-function getInputValue(){
-  let noteText = document.getElementById('note_text').value;
-  createNote(noteText);
-  displayNotes();
-}
+function appendNoteToPage(note) {
+  let list = document.getElementById("list");
+  let listItem = document.createElement("li");
+  let link = document.createElement("a");
+  let description = `${note.get20Chars()}...`;
 
-function displayNotes() {
-  let element = document.createElement("li");
-  let array = notebook.getNotes();
-  let text = array[0].getText();
-  element.textContent = text;
-  document.getElementById("note_list").appendChild(element);
-}
+  link.textContent = description;
+  link.href = '#';
+  link.id = description;
 
-// ready(() => {
-  // function getInputValue(){
-  //   let noteText = document.getElementById('note_text').value;
-  //   const form = document.getElementById('note_form');
-  //   form.addEventListener("submit", createNote(noteText));
-  // }
+  // link.onclick = displayNote();
+  // link.addEventListener("click", displayNote(note));
   
-  // const form = document.getElementById('note_form');
-  // let noteText = document.getElementById('note_text').value;
-  // form.addEventListener("submit", createNote(noteText));
-// });
+  list.appendChild(listItem);
+  listItem.appendChild(link);
+  
+}
+
+function displayNote(note) {
+  let noteList = document.getElementById("noteList")
+  let noteDisplay = document.getElementById("noteDisplay");
+  let noteBody = document.getElementById("body");
+  let text = note.getText();
+  noteList.style.display = "none";
+  noteDisplay.style.display = "block";
+  noteBody.textContent = text;
+}
+
+function hideNote(note) {
+  let noteList = document.getElementById("noteList")
+  let noteDisplay = document.getElementById("noteDisplay");
+  let noteBody = document.getElementById("body");
+  noteBody.textContent = "";
+  noteList.style.display = "block";
+  noteDisplay.style.display = "none";
+}
