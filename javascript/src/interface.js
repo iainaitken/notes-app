@@ -1,3 +1,7 @@
+let noteList = document.getElementById("note-list")
+let noteDisplay = document.getElementById("note-display");
+let noteBody = document.getElementById("body");
+
 let addNoteButton = document.getElementById('addNote');
 addNoteButton.addEventListener("click", function(event) {
   submitNote();
@@ -53,9 +57,6 @@ function appendNoteToPage(note) {
 }
 
 function displayNote(note) {
-  let noteList = document.getElementById("note-list")
-  let noteDisplay = document.getElementById("note-display");
-  let noteBody = document.getElementById("body");
   let text = note.getText();
   noteList.style.display = "none";
   noteDisplay.style.display = "block";
@@ -63,9 +64,6 @@ function displayNote(note) {
 }
 
 function hideNote() {
-  let noteList = document.getElementById("note-list")
-  let noteDisplay = document.getElementById("note-display");
-  let noteBody = document.getElementById("body");
   noteBody.textContent = "";
   noteList.style.display = "block";
   noteDisplay.style.display = "none";
