@@ -20,13 +20,13 @@ function submitNote(){
 }
 
 function createEmojifiedNote(text) {
-  let json = JSON.parse(`{ "text": "${text}"}`);
+  let text_json = JSON.parse(`{ "text": "${text}"}`);
   fetch("https://makers-emojify.herokuapp.com/", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(json)
+    body: JSON.stringify(text_json)
   })
   .then(response => response.json())
   .then(data => {
