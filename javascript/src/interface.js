@@ -16,6 +16,10 @@ hideNoteButton.addEventListener("click", function(event) {
 
 function submitNote(){
   let text = document.getElementById('note-text').value;
+  createEmojifiedNote(text);
+}
+
+function createEmojifiedNote(text) {
   let json = JSON.parse(`{ "text": "${text}"}`);
   fetch("https://makers-emojify.herokuapp.com/", {
     method: 'POST',
