@@ -3,7 +3,7 @@ describe("Notes", function() {
     it("Adds the note from the textarea when appendNoteToPage is run", function() {
         textarea = document.getElementById("note-text")
         textarea.value = "This should be the first note's text";
-        appendNoteToPage();
+        submitNote()
         expect(document.getElementsByTagName('a')[0].textContent).toEqual("This should be the f...");
 
     })
