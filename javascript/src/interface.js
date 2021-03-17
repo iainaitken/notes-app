@@ -1,20 +1,35 @@
 let addNoteButton = document.getElementById('addNote');
 
-addNoteButton.addEventListener("click", function(event) { 
+addNoteButton.addEventListener("click", function(event) {
   submitNote();
   event.preventDefault();
 })
 
 let hideNoteButton = document.getElementById('hideNote');
 
-hideNoteButton.addEventListener("click", function(event) { 
+hideNoteButton.addEventListener("click", function(event) {
   hideNote();
   event.preventDefault();
 })
 
 function submitNote(){
   let text = document.getElementById('note-text').value;
-  let note = createNote(text);
+  let json = JSON.parse(`{ "text": "${text}"}`);
+  console.log(json);
+  fetch("https://makers-emojify.herokuapp.com/", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(json)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  // send json to api, get json back
+  // let emojifiedText = json.emoji
+  let note = createNote(emojifiedText);
   appendNoteToPage(note);
 }
 
@@ -35,7 +50,7 @@ function appendNoteToPage(note) {
 
   list.appendChild(listItem);
   listItem.appendChild(link);
-  
+
   link.addEventListener("click", function(event) {
     displayNote(note);
     event.preventDefault();
