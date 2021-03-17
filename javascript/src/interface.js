@@ -1,3 +1,18 @@
+let addNoteButton = document.getElementById('addNote');
+
+addNoteButton.addEventListener("click", function(event) { 
+  submitNote();
+  event.preventDefault();
+})
+
+let hideNoteButton = document.getElementById('hideNote');
+
+hideNoteButton.addEventListener("click", function(event) { 
+  hideNote();
+  event.preventDefault();
+})
+
+
 function submitNote(){
   let text = document.getElementById('note-text').value;
   let note = createNote(text);

@@ -12,11 +12,11 @@
 
   <body>
     <div id="note-list">
-      <div id="add-note">
+      <div>
         <form id="form">
           <label for="note-text">Note text:</label>
           <input type="text" name="note-text" id="note-text" placeholder="Type here..."/>
-          <button type="button" onclick="submitNote()">Add Note</button>
+          <button type="button" id="addNote">Add Note</button>
         </form>
       </div>
       <div>
@@ -28,7 +28,7 @@
     <div id="note-display">
       <p id="body"></p>
       <br>
-      <button id="return" onclick="hideNote()">Back to Notes</button>
+      <button id="hideNote">Back to Notes</button>
     </div>
   </body>
 
