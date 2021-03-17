@@ -12,7 +12,6 @@ hideNoteButton.addEventListener("click", function(event) {
   event.preventDefault();
 })
 
-
 function submitNote(){
   let text = document.getElementById('note-text').value;
   let note = createNote(text);
@@ -41,6 +40,9 @@ function appendNoteToPage(note) {
     displayNote(note);
     event.preventDefault();
   })
+
+  document.getElementById('note-text').value = "";
+
 }
 
 function displayNote(note) {
