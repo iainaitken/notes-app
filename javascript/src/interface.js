@@ -1,5 +1,5 @@
 function submitNote(){
-  let text = document.getElementById('note_text').value;
+  let text = document.getElementById('note-text').value;
   let note = createNote(text);
   appendNoteToPage(note);
 }
@@ -29,8 +29,8 @@ function appendNoteToPage(note) {
 }
 
 function displayNote(note) {
-  let noteList = document.getElementById("noteList")
-  let noteDisplay = document.getElementById("noteDisplay");
+  let noteList = document.getElementById("note-list")
+  let noteDisplay = document.getElementById("note-display");
   let noteBody = document.getElementById("body");
   let text = note.getText();
   noteList.style.display = "none";
@@ -39,8 +39,8 @@ function displayNote(note) {
 }
 
 function hideNote() {
-  let noteList = document.getElementById("noteList")
-  let noteDisplay = document.getElementById("noteDisplay");
+  let noteList = document.getElementById("note-list")
+  let noteDisplay = document.getElementById("note-display");
   let noteBody = document.getElementById("body");
   noteBody.textContent = "";
   noteList.style.display = "block";

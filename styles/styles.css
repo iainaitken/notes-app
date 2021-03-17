@@ -1,9 +1,9 @@
 body {
   background-color: pink;
 }
-#noteDisplay {
+#note-display {
   display: none;
 }
-#noteList {
+#note-list {
   display: block;
 }
