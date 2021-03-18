@@ -1,3 +1,16 @@
+
+
+// check local storage (key - array) 
+// if nothing there, create an empty array
+// if there is someting there, grab that array and populate the list by appendnoteto page
+
+let array
+if (window.localStorage.getItem('listOfNotes') !== null) {
+  array = window.localStorage.getItem('listOfNotes').json
+} else {
+  array = []
+}
+
 let noteList = document.getElementById("note-list")
 let noteDisplay = document.getElementById("note-display");
 let noteBody = document.getElementById("body");
@@ -37,6 +50,7 @@ function createEmojifiedNote(text) {
 
 function createNote(text) {
   let note = new Note(text);
+  updateLocalStorage(note);
   return note;
 }
 
@@ -71,4 +85,9 @@ function hideNote() {
   noteBody.textContent = "";
   noteList.style.display = "block";
   noteDisplay.style.display = "none";
+}
+
+function updateLocalStorage(note) {
+  array.push(note)
+  window.localStorage.setItem('listOfNotes', JSON.stringify(array))
 }
