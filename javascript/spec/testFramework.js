@@ -8,6 +8,11 @@ function it(title, body) {
     body();
 }
 
+function clear(element) {
+element.innerHTML = "";
+
+}
+
 function expect(actual) {
     return {
         toEqual: (expected) => {
@@ -15,6 +20,13 @@ function expect(actual) {
                 console.log("PASS: Good job")
             } else {
                 console.log(`FAIL: expected ${actual} to equal ${expected}`)
+            }
+        },
+        toBe: (expected) => {
+            if (actual instanceof expected) {
+                console.log("PASS: Good job")
+            } else {
+                console.log(`FAIL: expected ${actual} to be and instance of ${expected}`)
             }
         }
     }
