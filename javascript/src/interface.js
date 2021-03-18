@@ -1,21 +1,38 @@
-let addNoteButton = document.getElementById('addNote');
+let noteList = document.getElementById("note-list")
+let noteDisplay = document.getElementById("note-display");
+let noteBody = document.getElementById("body");
 
-addNoteButton.addEventListener("click", function(event) { 
+let addNoteButton = document.getElementById('addNote');
+addNoteButton.addEventListener("click", function(event) {
   submitNote();
   event.preventDefault();
 })
 
 let hideNoteButton = document.getElementById('hideNote');
-
-hideNoteButton.addEventListener("click", function(event) { 
+hideNoteButton.addEventListener("click", function(event) {
   hideNote();
   event.preventDefault();
 })
 
 function submitNote(){
   let text = document.getElementById('note-text').value;
-  let note = createNote(text);
-  appendNoteToPage(note);
+  createEmojifiedNote(text);
+}
+
+function createEmojifiedNote(text) {
+  let text_json = JSON.parse(`{ "text": "${text}"}`);
+  fetch("https://makers-emojify.herokuapp.com/", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(text_json)
+  })
+  .then(response => response.json())
+  .then(data => {
+      let note = createNote(data.emojified_text);
+      appendNoteToPage(note);
+  })
 }
 
 function createNote(text) {
@@ -32,23 +49,18 @@ function appendNoteToPage(note) {
   link.textContent = description;
   link.href = '#';
   link.id = description;
-
-  list.appendChild(listItem);
-  listItem.appendChild(link);
-  
   link.addEventListener("click", function(event) {
     displayNote(note);
     event.preventDefault();
   })
 
-  document.getElementById('note-text').value = "";
+  list.appendChild(listItem);
+  listItem.appendChild(link);
 
+  document.getElementById('note-text').value = "";
 }
 
 function displayNote(note) {
-  let noteList = document.getElementById("note-list")
-  let noteDisplay = document.getElementById("note-display");
-  let noteBody = document.getElementById("body");
   let text = note.getText();
   noteList.style.display = "none";
   noteDisplay.style.display = "block";
@@ -56,9 +68,6 @@ function displayNote(note) {
 }
 
 function hideNote() {
-  let noteList = document.getElementById("note-list")
-  let noteDisplay = document.getElementById("note-display");
-  let noteBody = document.getElementById("body");
   noteBody.textContent = "";
   noteList.style.display = "block";
   noteDisplay.style.display = "none";
