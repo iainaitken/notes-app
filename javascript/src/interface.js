@@ -6,14 +6,20 @@
 
 let array
 if (window.localStorage.getItem('listOfNotes') !== null) {
-  array = window.localStorage.getItem('listOfNotes').json
+  array = JSON.parse(window.localStorage.getItem('listOfNotes'))
 } else {
   array = []
 }
+// console.log(window.localStorage.getItem('listOfNotes').json)
 
 let noteList = document.getElementById("note-list")
 let noteDisplay = document.getElementById("note-display");
 let noteBody = document.getElementById("body");
+
+array.forEach( note => {
+    let newNote = new Note(note._text)
+    appendNoteToPage(newNote)
+})
 
 let addNoteButton = document.getElementById('addNote');
 addNoteButton.addEventListener("click", function(event) {
