@@ -1,4 +1,5 @@
-textarea = document.getElementById("note-text")
+window.localStorage.clear();
+textarea = document.getElementById("note-text");
 textarea.value = "This should be the first note's text";
 submitNote();
 

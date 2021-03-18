@@ -10,7 +10,6 @@ if (window.localStorage.getItem('listOfNotes') !== null) {
 } else {
   array = []
 }
-// console.log(window.localStorage.getItem('listOfNotes').json)
 
 let noteList = document.getElementById("note-list")
 let noteDisplay = document.getElementById("note-display");
