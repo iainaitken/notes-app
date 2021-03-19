@@ -15,17 +15,17 @@ array.forEach( note => {
     appendNoteToPage(newNote)
 })
 
-let addNoteButton = document.getElementById('add-note');
-addNoteButton.addEventListener("click", function(event) {
-  submitNote();
-  event.preventDefault();
-})
+// let addNoteButton = document.getElementById('add-note');
+// addNoteButton.addEventListener("click", function(event) {
+//   submitNote();
+//   event.preventDefault();
+// })
 
-let hideNoteButton = document.getElementById('hide-note');
-hideNoteButton.addEventListener("click", function(event) {
-  hideNote();
-  event.preventDefault();
-})
+// let hideNoteButton = document.getElementById('hide-note');
+// hideNoteButton.addEventListener("click", function(event) {
+//   hideNote();
+//   event.preventDefault();
+// })
 
 function submitNote(){
   let text = document.getElementById('enter-text').value;
@@ -90,10 +90,4 @@ function hideNote() {
 function updateLocalStorage(note) {
   array.push(note)
   window.localStorage.setItem('listOfNotes', JSON.stringify(array))
-}
-
-function clearLocalStorage() {
-  window.localStorage.clear;
-  let list = document.getElementById("list");
-  list.innerHTML = "";
 }
