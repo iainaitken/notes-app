@@ -5,9 +5,24 @@ let noteBody = document.getElementById("note-body");
 let storedNoteArray;
 updateNoteList();
 
-function submitNote(){
-  let text = document.getElementById('enter-text').value;
-  createEmojifiedNote(text);
+function appendNoteToPage(note) {
+  let list = document.getElementById("list");
+  let listItem = document.createElement("li");
+  let link = document.createElement("a");
+  let description = `${note.get20Chars()}...`;
+  
+  link.textContent = description;
+  link.href = '#';
+  link.id = description;
+  link.addEventListener("click", function(event) {
+    displayNote(note);
+    event.preventDefault();
+  })
+  
+  list.appendChild(listItem);
+  listItem.appendChild(link);
+  
+  document.getElementById('enter-text').value = "";
 }
 
 function createEmojifiedNote(text) {
@@ -32,26 +47,6 @@ function createNote(text) {
   return note;
 }
 
-function appendNoteToPage(note) {
-  let list = document.getElementById("list");
-  let listItem = document.createElement("li");
-  let link = document.createElement("a");
-  let description = `${note.get20Chars()}...`;
-  
-  link.textContent = description;
-  link.href = '#';
-  link.id = description;
-  link.addEventListener("click", function(event) {
-    displayNote(note);
-    event.preventDefault();
-  })
-  
-  list.appendChild(listItem);
-  listItem.appendChild(link);
-  
-  document.getElementById('enter-text').value = "";
-}
-
 function displayNote(note) {
   let text = note.getText();
   noteList.style.display = "none";
@@ -63,6 +58,11 @@ function hideNote() {
   noteBody.textContent = "";
   noteList.style.display = "block";
   noteDisplay.style.display = "none";
+}
+
+function submitNote(){
+  let text = document.getElementById('enter-text').value;
+  createEmojifiedNote(text);
 }
 
 function updateLocalStorage(text) {

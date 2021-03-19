@@ -19,11 +19,8 @@ clearNoteButton.addEventListener("click", function(event) {
 let deleteNoteButton = document.getElementById('delete-note');
 deleteNoteButton.addEventListener("click", function(event) {
   let text = noteBody.textContent;
-  console.log(text)
   let index = storedNoteArray.indexOf(text);
-  console.log(index)
   storedNoteArray.splice(index, 1);
-  console.log(storedNoteArray)
   window.localStorage.setItem('listOfNotes', JSON.stringify(storedNoteArray))
   document.getElementById("list").innerHTML = "";
   hideNote()
