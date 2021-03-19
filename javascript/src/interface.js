@@ -6,9 +6,9 @@ if (window.localStorage.getItem('listOfNotes') !== null) {
   array = []
 }
 
-let noteList = document.getElementById("note-list")
-let noteDisplay = document.getElementById("note-display");
-let noteBody = document.getElementById("body");
+let noteList = document.getElementById("create-note")
+let noteDisplay = document.getElementById("display-note");
+let noteBody = document.getElementById("note-body");
 
 array.forEach( note => {
     let newNote = new Note(note._text)
@@ -28,7 +28,7 @@ hideNoteButton.addEventListener("click", function(event) {
 })
 
 function submitNote(){
-  let text = document.getElementById('note-text').value;
+  let text = document.getElementById('enter-text').value;
   createEmojifiedNote(text);
 }
 
@@ -71,7 +71,7 @@ function appendNoteToPage(note) {
   list.appendChild(listItem);
   listItem.appendChild(link);
 
-  document.getElementById('note-text').value = "";
+  document.getElementById('enter-text').value = "";
 }
 
 function displayNote(note) {
@@ -90,4 +90,10 @@ function hideNote() {
 function updateLocalStorage(note) {
   array.push(note)
   window.localStorage.setItem('listOfNotes', JSON.stringify(array))
+}
+
+function clearLocalStorage() {
+  window.localStorage.clear;
+  let list = document.getElementById("list");
+  list.innerHTML = "";
 }

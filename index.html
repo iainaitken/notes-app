@@ -17,9 +17,9 @@
     <div class="header">
       <h1>NoteKeeper</h1>
     </div>
-    <div id="note-list">
+    <div id="create-note">
       <div>
-        <textarea id="note-text" cols="50" rows="10" placeholder="Please type a new note here..."></textarea>
+        <textarea id="enter-text" cols="50" rows="10" placeholder="Please type a new note here..." maxlength="400"></textarea>
         <br>
         <br>
         <button type="button" id="add-note">Add Note</button>
@@ -30,8 +30,8 @@
         <button type="button" id="clear-notes">Clear All Notes</button>
       </div>
     </div>
-    <div id="note-display">
-      <p id="body"></p>
+    <div id="display-note">
+      <p id="note-body"></p>
       <br>
       <button id="hide-note">Back to Notes</button>
       <button id="delete-note">Delete Note</button>
