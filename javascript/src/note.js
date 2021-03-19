@@ -8,7 +8,6 @@ class Note {
     return this._text;
   };
 
-
   get20Chars(){
     let l
     if (this._text.length > this.DISPLAY_CHARS) {
@@ -19,5 +18,3 @@ class Note {
     }
   };
 }
-
-

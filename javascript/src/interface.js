@@ -1,9 +1,4 @@
 
-
-// check local storage (key - array) 
-// if nothing there, create an empty array
-// if there is someting there, grab that array and populate the list by appendnoteto page
-
 let array
 if (window.localStorage.getItem('listOfNotes') !== null) {
   array = JSON.parse(window.localStorage.getItem('listOfNotes'))
@@ -20,13 +15,13 @@ array.forEach( note => {
     appendNoteToPage(newNote)
 })
 
-let addNoteButton = document.getElementById('addNote');
+let addNoteButton = document.getElementById('add-note');
 addNoteButton.addEventListener("click", function(event) {
   submitNote();
   event.preventDefault();
 })
 
-let hideNoteButton = document.getElementById('hideNote');
+let hideNoteButton = document.getElementById('hide-note');
 hideNoteButton.addEventListener("click", function(event) {
   hideNote();
   event.preventDefault();

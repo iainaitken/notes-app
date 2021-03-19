@@ -1,15 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
-      <script defer src="javascript/src/note.js"> </script>
-      <script defer src="javascript/src/interface.js"> </script>
-      <!-- <script defer src="javascript/spec/testFramework.js"></script>
-      <script defer src="javascript/spec/noteSpec.js"></script> -->
+    <script defer src="javascript/src/note.js"> </script>
+    <script defer src="javascript/src/interface.js"> </script>
 
-      <title>| Notes App |</title>
+    <title>| NoteKeeper |</title>
   </head>
 
   <body>
@@ -19,19 +20,16 @@
         <textarea id="note-text" cols="50" rows="10" placeholder="Type here..."></textarea>
         <br>
         <br>
-        <button type="button" id="addNote">Add Note</button>
+        <button type="button" id="add-note">Add Note</button>
       </div>
       <div>
-        <ul id="list">
-
-        </ul>
+        <ul id="list"></ul>
       </div>
     </div>
     <div id="note-display">
       <p id="body"></p>
       <br>
-      <button id="hideNote">Back to Notes</button>
+      <button id="hide-note">Back to Notes</button>
     </div>
   </body>
-
 </html>
