@@ -2,16 +2,8 @@ let noteList = document.getElementById("create-note")
 let noteDisplay = document.getElementById("display-note");
 let noteBody = document.getElementById("note-body");
 
-let storedNoteArray
-if (window.localStorage.getItem('listOfNotes') !== null) {
-  storedNoteArray = JSON.parse(window.localStorage.getItem('listOfNotes'))
-} else {
-  storedNoteArray = []
-}
-storedNoteArray.forEach( note => {
-    let newNote = createNote(note)
-    appendNoteToPage(newNote)
-})
+let storedNoteArray;
+updateNoteList();
 
 function submitNote(){
   let text = document.getElementById('enter-text').value;
@@ -29,9 +21,9 @@ function createEmojifiedNote(text) {
   })
   .then(response => response.json())
   .then(data => {
-      updateLocalStorage(data.emojified_text);
-      let note = createNote(data.emojified_text);
-      appendNoteToPage(note);
+    updateLocalStorage(data.emojified_text);
+    let note = createNote(data.emojified_text);
+    appendNoteToPage(note);
   })
 }
 
@@ -45,7 +37,7 @@ function appendNoteToPage(note) {
   let listItem = document.createElement("li");
   let link = document.createElement("a");
   let description = `${note.get20Chars()}...`;
-
+  
   link.textContent = description;
   link.href = '#';
   link.id = description;
@@ -53,10 +45,10 @@ function appendNoteToPage(note) {
     displayNote(note);
     event.preventDefault();
   })
-
+  
   list.appendChild(listItem);
   listItem.appendChild(link);
-
+  
   document.getElementById('enter-text').value = "";
 }
 
@@ -76,4 +68,16 @@ function hideNote() {
 function updateLocalStorage(text) {
   storedNoteArray.push(text)
   window.localStorage.setItem('listOfNotes', JSON.stringify(storedNoteArray))
+}
+
+function updateNoteList() {
+  if (window.localStorage.getItem('listOfNotes') !== null) {
+    storedNoteArray = JSON.parse(window.localStorage.getItem('listOfNotes'))
+  } else {
+    storedNoteArray = []
+  }
+  storedNoteArray.forEach( note => {
+      let newNote = createNote(note)
+      appendNoteToPage(newNote)
+  })
 }
