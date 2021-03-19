@@ -15,3 +15,10 @@ clearNoteButton.addEventListener("click", function(event) {
   window.localStorage.clear();
   document.getElementById("list").innerHTML = "";
 })
+
+let deleteNoteButton = document.getElementById('delete-note');
+// variable that represents the specific note, or text in the body field (depending
+// on how the localstorage method is changed)
+// add event listener
+// remove text from array
+// replace stored array with new array
