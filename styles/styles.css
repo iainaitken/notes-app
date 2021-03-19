@@ -1,9 +1,65 @@
-body {
-  background-color: pink;
+*{
+  margin: 0;
 }
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+body {
+  background-color: Ivory;
+  background-image: linear-gradient(IndianRed, Ivory);
+}
+
+button {
+  font-family: Verdana;
+  margin: 0 0 0 10px;
+}
+
+.header{
+  background-color: IndianRed;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+h1 {
+  font-family: Verdana;
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+li {
+  margin: 10px 0 5px 10px;
+  font-family: Bradley Hand;
+  font-size: 18px;
+}
+
 #note-display {
   display: none;
 }
+
 #note-list {
   display: block;
+}
+
+p {
+  font-family: Bradley Hand;
+  font-size: 18px;
+}
+
+textarea {
+  font-family: Verdana;
+  margin: 10px 0 0 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
