@@ -1,5 +1,6 @@
 *{
   margin: 0;
+  padding: 0;
 }
 
 a:link {
@@ -12,11 +13,20 @@ a:visited {
 
 body {
   background-color: Ivory;
-  background-image: linear-gradient(IndianRed, Ivory);
+  background-image: url("../images/white_leather.png");
 }
 
 #note-body {
-  margin: 10px 0 0 10px;
+  transform: rotate(-1deg);
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:16em;
+  width:16em;
+  padding:1em;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transition: transform .15s linear;
 }
 
 button {
@@ -46,7 +56,7 @@ html {
 li {
   margin: 10px 0 5px 20px;
   font-family: Bradley Hand;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 #create-note {
@@ -55,12 +65,22 @@ li {
 
 p {
   font-family: Bradley Hand;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 textarea {
-  font-family: Verdana;
-  margin: 10px 0 0 10px;
+  /* transform: rotate(-3deg); */
+  text-decoration:none;
+  font-family: Bradley Hand;
+  font-size: 1rem;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:16em;
+  width:16em;
+  padding:1em;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transition: transform .15s linear;
 }
 
 ul {
