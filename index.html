@@ -16,16 +16,18 @@
   </head>
 
   <body>
-    <div class="header">
+    <!-- <div class="header">
       <h1>NoteKeeper</h1>
-    </div>
-    <div id="create-note">
-      <div>
+    </div> -->
+    <div class="container" id="create-note">
+      <div id="text-box">
         <textarea id="enter-text" cols="50" rows="10" placeholder="Please type a new note here..." maxlength="400"></textarea>
         <br>
         <br>
-        <button type="button" id="add-note">Add Note</button>
-        <button type="button" id="clear-notes">Clear All Notes</button>
+        <div id="buttons">
+          <button type="button" id="add-note">Add Note</button>
+          <button type="button" id="clear-notes">Clear All Notes</button>
+        </div>
       </div>
       <div>
         <ul id="list"></ul>
