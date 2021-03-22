@@ -3,33 +3,55 @@
   padding: 0;
 }
 
-a:link {
-  color: black;
-}
-
-a:visited {
-  color: black;
+html {
+  height: 100%;
 }
 
 body {
   background-image: url("../images/white_leather.png");
 }
 
-#note-body {
-  transform: rotate(-1deg);
+.container {
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  margin: auto;
   text-decoration:none;
+  font-family: Bradley Hand;
+  font-size: 1rem;
   color:#000;
   background:#ffc;
   display:block;
-  height:16em;
-  width:16em;
+  height:15em;
+  width:15em;
   padding:1em;
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
   transition: transform .15s linear;
 }
 
-#buttons {
+#note-body {
   margin: auto;
+  transform: rotate(-1deg);
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:15em;
+  width:15em;
+  padding:1em;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  transition: transform .15s linear;
+}
+
+#display-note {
+  display: none;
+}
+
+.button-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -39,14 +61,7 @@ button {
   font-family: Verdana;
   min-width: 7rem;
   padding: .5rem;
-}
-
-#add-note: {
-  margin: 0 2rem 0 0;
-}
-
-#display-note {
-  display: none;
+  margin: .5rem;
 }
 
 .header{
@@ -60,42 +75,9 @@ h1 {
   color: white;
 }
 
-html {
-  height: 100%;
-}
-
-#create-note {
-  margin: auto;
-  width: 50%;
-  align-items: center;
-  display: block;
-  justify-content: center;
-}
-
 p {
   font-family: Bradley Hand;
   font-size: 1rem;
-}
-
-/* #text-box {
-  align-self: center;
-  align-items: center;
-} */
-
-textarea {
-  /* transform: rotate(-3deg); */
-  margin: auto;
-  text-decoration:none;
-  font-family: Bradley Hand;
-  font-size: 1rem;
-  color:#000;
-  background:#ffc;
-  display:block;
-  height:16em;
-  width:16em;
-  padding:1em;
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  transition: transform .15s linear;
 }
 
 ul,li{
@@ -109,7 +91,7 @@ ul{
 }
 
 ul li{
-  margin:.8em;
+  margin:1em;
 }
 
 ul li a{
@@ -176,4 +158,12 @@ ul li a:hover,ul li a:focus{
   transform: scale(1.25);
   position:relative;
   z-index:5;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
 }
