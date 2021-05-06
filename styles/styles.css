@@ -107,7 +107,7 @@ button {
 #list-of-notes {
   width: 19rem;
   height: 20rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 h1 {
