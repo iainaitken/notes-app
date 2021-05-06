@@ -11,11 +11,29 @@ body {
   background-image: url("../images/white_leather.png");
 }
 
-.container {
+.header{
+  background-color: IndianRed;
+  padding: 10px;
+  padding-top: 30px;
   margin: auto;
-  width: 50%;
+  width: 20rem;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  margin: auto;
+  width: 20rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  margin: auto;
+  background-color: white;
+  padding-top: 1rem;
+  width: 21rem;
+  height: 40rem;
 }
 
 textarea {
@@ -26,7 +44,7 @@ textarea {
   color:#000;
   background:#ffc;
   display:block;
-  height:15em;
+  height:12em;
   width:15em;
   padding:1em;
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
@@ -37,10 +55,11 @@ textarea {
   margin: auto;
   transform: rotate(-1deg);
   text-decoration:none;
+  overflow-wrap: break-word;
   color:#000;
   background:#ffc;
   display:block;
-  height:15em;
+  height:12em;
   width:15em;
   padding:1em;
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
@@ -57,17 +76,38 @@ textarea {
   justify-content: center;
 }
 
-button {
-  font-family: Verdana;
-  min-width: 7rem;
-  padding: .5rem;
-  margin: .5rem;
+#add-note {
+  background-color: rgb(95, 190, 95);
+  font-weight: bold;
 }
 
-.header{
-  background-color: IndianRed;
-  padding: 10px;
-  padding-top: 30px;
+#clear-notes {
+  background-color: rgb(226, 78, 78);
+  font-weight: bold;
+}
+
+#hide-note {
+  background-color: rgb(95, 190, 95);
+  font-weight: bold;
+}
+
+#delete-note {
+  background-color: rgb(226, 78, 78);
+  font-weight: bold;
+}
+
+button {
+  font-family: Verdana;
+  min-width: 7.5rem;
+  padding: .5rem;
+  margin: .5rem;
+  border-radius: 5px;
+}
+
+#list-of-notes {
+  width: 19rem;
+  height: 20rem;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -99,10 +139,11 @@ ul li a{
   font-family: Bradley Hand;
   font-size: 1rem;
   text-decoration:none;
+  overflow-wrap: break-word;
   color:#000;
   background:#ffc;
   display:block;
-  height:5em;
+  height:4em;
   width:5em;
   padding:1em;
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
