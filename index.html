@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
 
     <script defer src="javascript/src/note.js"> </script>
     <script defer src="javascript/src/interface.js"> </script>
@@ -18,23 +19,28 @@
     <div class="header">
       <h1>NoteKeeper</h1>
     </div>
-    <div id="create-note">
-      <div>
-        <textarea id="enter-text" cols="50" rows="10" placeholder="Please type a new note here..." maxlength="400"></textarea>
-        <br>
-        <br>
-        <button type="button" id="add-note">Add Note</button>
-        <button type="button" id="clear-notes">Clear All Notes</button>
+    <div class="container" id="app">
+      <div class="container" id="create-note">
+        <div id="text-box">
+          <textarea id="enter-text" cols="50" rows="10" placeholder="Please type a new note here..." maxlength="220"></textarea>
+          <br>
+          <div class="button-container">
+            <button type="button" id="add-note">Add Note</button>
+            <button type="button" id="clear-notes">Clear Notes</button>
+          </div>
+        </div>
+        <div class="container" id="list-of-notes">
+          <ul id="list"></ul>
+        </div>
       </div>
-      <div>
-        <ul id="list"></ul>
+      <div class="container" id="display-note">
+        <p id="note-body"></p>
+        <br>
+        <div class="button-container">
+          <button id="hide-note">Back to Notes</button>
+          <button id="delete-note">Delete Note</button>
+        </div>
       </div>
-    </div>
-    <div id="display-note">
-      <p id="note-body"></p>
-      <br>
-      <button id="hide-note">Back to Notes</button>
-      <button id="delete-note">Delete Note</button>
     </div>
   </body>
 </html>
